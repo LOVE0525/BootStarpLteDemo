@@ -1,0 +1,40 @@
+data-val-required 必输字段  eq：data-val-required="用户名不能为空！"
+
+data-val-email 必须输入正确格式的电子邮件  eq：data-val-email="请输入正确的邮箱格式"
+
+data-val-url 必须输入正确格式的网址  eq：data-val-url="必须输入正确格式的网址"
+
+data-val-date 必须输入正确格式的日期 eq：data-val-date="必须输入正确格式的日期"
+
+data-val-digits 必须输入正整数 eq：data-val-digits="必须输入正整数"
+
+data-val-number 必须输入整数 eq: data-val-number="必须输入整数"
+
+data-val-range="须介于10到100" data-val-range-min="10" data-val-range-max="100"  输入值介于俩者之间
+
+eq:<input type="text" id="tRange" name="tRange" value="5" data-val="true" data-val-range="须介于10到100" data-val-range-min="10" data-val-range-max="100" />
+
+data-val-equalto="必须和上方同样的内容" data-val-equalto-other="tRange" 输入值须和name="tRange"相同
+
+eq:<input type="text" id="tEq" name="tEq"  data-val="true" data-val-equalto="必须和上方同样的内容" data-val-equalto-other="tRange" />
+
+data-val-length="长度为4-8之间" data-val-length-min="4" data-val-length-max="8" 输入数据长度为4-8之间
+
+eq:<input type="text" id="tLen" name="tLen" data-val-required="不能为空" data-val="true" data-val-length="长度为4-8之间"data-val-length-min="4" data-val-length-max="8" />
+
+
+
+data-val-regex="格式必须为999-999" data-val-regex-pattern="[0-9A-Z]{3}-[0-9A-Z]{3}"  验证输入数据格式
+
+eq: <input type="text" id="tRegex" name="tRegex" data-val-required="不能为空" data-val="true" data-val-regex="格式必须为999-999" ata-val-regex-pattern="[0-9A-Z]{3}-[0-9A-Z]{3}" />
+
+eq: <input type="text" id="regex"  name="regex"  data-val="true" data-val-required="不能为空！" data-val-regex="手机格式不正确" data-val-regex-pattern="(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}" />
+
+
+
+data-val-accept="后缀必须为jpg|gif|png" data-val-accept-exts="jpg|gif|png" 验证输入数据的后缀
+
+eq：<input type="text" id="tAccept" name="tAccept" data-val-required="不能为空" data-val="true" data-val-accept="后缀必须为jpg|gif|png" data-val-accept-exts="jpg|gif|png" />
+
+
+data-val-remote="已经被注册，请选择其他登录名称！" data-val-remote-url="Index/CheckName" remote-additionalfields="*.Email" 验证用户名称的唯一性

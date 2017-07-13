@@ -21,5 +21,10 @@ namespace LteDemo.Controllers
         {
             return View();
         }
+
+        public ActionResult AjaxDemo()
+        {
+            return View();
+        }
     }
 }

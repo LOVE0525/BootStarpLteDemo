@@ -2,18 +2,18 @@
 @{
     ViewBag.Title = "From";
 }
-@section breadcrumb{ 
+@section breadcrumb{
 
-<div class="content-header">
-    <h1>
-        Demo
-        <small>表单布局</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">表单布局</li>
-    </ol>
-</div>
+    <div class="content-header">
+        <h1>
+            Demo
+            <small>表单布局</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">表单布局</li>
+        </ol>
+    </div>
 }
 <div class="row">
     <div class="col-lg-6">
@@ -52,4 +52,130 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Horizontal Form</h3>
+            </div>
+            <form class="form-horizontal">
+                @*form 标签添加form-horizontal class *@
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号" data-val="true" data-val-required="手机号不能为空！" />
+                            <span data-valmsg-for="phone" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="输入邮箱" data-val="true" data-val-required="Email不能为空！" data-val-email="请输入正确的Email" />
+                            <span data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box box-info collapsed-box">
+            <div class="box-header">
+                <span class="box-title">validate  验证使用说明</span>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+     
+            <div class="box-body">
+            <p>
+                一、引入 script src="Scripts/jquery-1.7.1.min.</script>
+                script src="Scripts/jquery.validate.js"></script>
+                script src="Scripts/jquery.validate.unobtrusive.js"></script>
+            </p>
+            <p>
+                二、1）在需要验证的input标签上添加属性data-val="true"，即表示改标签参加验证。
+                2）继续在标签上添加属性data-val-required="用户名不能为空！"，表示此标签的内容不能为空的验证。
+            </p>
+            <p>
+                三、显示验证信息，有两种方式显示。一种是集中显示验证信息，另一种是在具体位置显示相对应的验证信息。
+                <pre>
+                     1）在需要显示验证信息的位置写入以下代码
+                   &lt;div class="validation-summary-valid" data-valmsg summary="true"&gt;
+                       &lt;ul>
+
+                           &lt;li style="display: none"&gt; &lt;/li&gt;
+
+                       &lt;/ul&gt;
+
+                  &lt;/div&gt;
+                </pre>
+     2）相对应的验证信息显示
+        <pre>
+            &lt;input type="text" name="cus" id="cus" data-val="true" data-val-required="用户名不能为空！" /&gt;
+ 
+           &lt;span data-valmsg-for="cus" data-valmsg-replace="true"&gt;&lt;/span&gt;
+                </pre>
+                </p>
+            <p>
+                <pre>
+                一、简单规则
+                刚才我们知道了data-val-required是必输字段，简单的验证规则如下
+                1.data-val-required 必输字段
+                2.data-val-email 必须输入正确格式的电子邮件
+                3.data-val-url 必须输入正确格式的网址
+                4.data-val-date 必须输入正确格式的日期
+                5.data-val-digits: 必须输入正整数
+                6.data-val-number:必须输入整数
+                7.data-val-regex表示正则的验证方式，data-val-regex-pattern正则的表达式
+                      data-val-regex="手机格式不正确" data-val-regex-pattern="(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}" 
+                8.data-val-remote可以帮助我们实现功能，data-val-remote-url表示ajax验证的路径，直接返回true or false 即可完成验证。
+                
+</pre>
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-6">
+
+        <div class="box box-info">
+            <div class="box-header">
+                <span class="box-title">横排Form</span>
+            </div>
+            <form role="form">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="phone" >手机号</label>
+                       
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号" data-val="true" data-val-required="手机号不能为空！"  data-val-regex="输入正确的手机号"  data-val-regex-pattern="(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}"/>
+                            <span data-valmsg-for="phone" data-valmsg-replace="true"></span>
+                       
+                    </div>
+                    <div class="form-group">
+                        @*class="col-sm-2 control-label"*@
+                        <label for="email" >Email</label>
+                        @*<div class="col-sm-10">*@
+                            <input type="text" class="form-control" id="email" name="email" placeholder="输入邮箱" data-val="true" data-val-required="Email不能为空！" data-val-email="请输入正确的Email" />
+                            <span data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        @*</div>*@
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
 
