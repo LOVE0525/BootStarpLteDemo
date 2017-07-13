@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LteDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,17 @@ namespace LteDemo.Controllers
         public ActionResult AjaxDemo()
         {
             return View();
+        }
+
+        public JsonResult PostDemo(UserModels model)
+        {
+            return new JsonResult() { Data = model };
+        }
+
+        public ViewResult SearchResult(UserModels model)
+        {
+            System.Threading.Thread.Sleep(1000);
+            return View(model);
         }
     }
 }

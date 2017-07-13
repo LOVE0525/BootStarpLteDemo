@@ -203,6 +203,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,6 +304,7 @@
     <Content Include="Views\Shared\_sidebar.cshtml" />
     <Content Include="Views\Layout\From.cshtml" />
     <Content Include="Views\Layout\AjaxDemo.cshtml" />
+    <Content Include="Views\Layout\SearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

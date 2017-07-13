@@ -1,0 +1,21 @@
+ajax框架:
+from,a标签加上属性:data-ajax="true" 表示启用异步框架
+
+
+data-ajax-mode:
+before:在元素前加入异步内容
+after:在指定容器最后加入异步返回内容
+replace-with:表示替换指定容器内容
+默认:将异步内容覆盖到指定容器
+
+data-ajax-update:指定内容容器选择查找值,e.g:data-ajax-update="#ajaxContent",data-ajax-update=".ajaxContent"
+
+
+data-ajax-confirm:确认提示语,e.g:data-ajax-confirm="确认提交?" ::注
+data-ajax-complete:异步操作结束后回调函数
+data-ajax-success:异步操作成功后回调函数
+data-ajax-failure:异步操作失败后回调函数
+data-ajax-begin:异步操作开始执行前回调函数
+
+data-ajax-loading:异步操作遮罩层的id或者class名 根据jquery查找器填写设置
+data-ajax-loading-duration:遮罩持续时间,可不填写

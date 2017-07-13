@@ -15,5 +15,20 @@
     </ol>
 </div>
     }
-<h2>AjaxDemo</h2>
-
+<form class="form-horizontal" data-ajax="true" method="post" action="/Layout/SearchResult" data-ajax-url="/Layout/SearchResult"   data-ajax-update="#resultID" data-ajax-mode="replace" data-ajax-loading="#model" >
+        <div class="form-group">
+            <label for="UserName" class="col-lg-2 control-label">用户名</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="UserName" name="UserName" placeholder="请输入用户名" data-val="true" data-val-required="用户名不能为空！" />
+                <span data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn-default">提交</button>
+</form>
+<div id="resultID"></div>
+<script type="text/javascript">
+    function callback(data)
+    {
+        alert(JSON.stringify(data));
+    }
+</script>
