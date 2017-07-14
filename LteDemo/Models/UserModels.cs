@@ -10,7 +10,7 @@ namespace LteDemo.Models
     public class UserModels
     {
         public string UserName { get; set; }
-
+        public string Phone { get; set; }
     }
 
 }

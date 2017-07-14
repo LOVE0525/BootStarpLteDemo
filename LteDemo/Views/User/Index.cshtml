@@ -1,0 +1,8 @@
+﻿@using LteDemo.Models
+@using LteDemo
+@{
+    ViewBag.Title = "Index";
+
+  var pager=   Model as Pager<UserModels>;
+}
+@pager.RenderPager("", "");
